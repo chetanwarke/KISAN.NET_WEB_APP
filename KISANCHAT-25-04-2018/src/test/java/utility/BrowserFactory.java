@@ -10,16 +10,15 @@ public class BrowserFactory{
 	public void chromeBrowser() {
 		System.setProperty("webdriver.chrome.driver", "E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\browser-drivers\\chromedriver.exe");
 		driver = new ChromeDriver();
-		driver.get("http://net.kisanlab.com");
 		driver.manage().window().maximize();
-	
+		
 //		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 	}
 	
 	public void firefoxBrowser() {
 		System.setProperty("webdriver.gecko.driver", "E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\browser-drivers\\geckodriver.exe");
 		driver =  new FirefoxDriver();
-		driver.get("http://net.kisanlab.com");
+		driver.manage().window().maximize();
 		
 	}
 

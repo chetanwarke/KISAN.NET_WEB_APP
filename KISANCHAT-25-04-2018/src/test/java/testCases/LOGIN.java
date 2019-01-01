@@ -21,10 +21,11 @@ public class LOGIN extends BrowserFactory{
 //			SelectLanguagePage sl = new SelectLanguagePage(driver);
 //			sl .clickEnglish();
 			LoginPage lp = new LoginPage(driver);
-			lp.click_enterMobile();
+//			lp.click_enterMobile();
+			Thread.sleep(3000);
 			lp.iFrame();
 			Thread.sleep(2000);
-			lp.set_countryCode();
+//			lp.set_countryCode();
 			lp.set_enterIFrameMobile();
 			lp.click_next();
 			lp.click_continueOTP();
