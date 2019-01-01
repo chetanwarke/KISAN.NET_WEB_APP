@@ -17,7 +17,7 @@ public class DataFile extends BaseClass{
 
 	public void openExcelFile()throws Exception { 
 		try {
-	      File file = new File("E:\\KISANCHAT-25-04-2018-20181224T063325Z-001\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
+	      File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      //Get the workbook instance for XLSX file 
@@ -37,7 +37,7 @@ public class DataFile extends BaseClass{
 
 	public String readTextInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("E:\\KISANCHAT-25-04-2018-20181224T063325Z-001\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
+		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
@@ -58,7 +58,7 @@ public class DataFile extends BaseClass{
 	
 	public double readNumberInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("/home/chetan/eclipse-workspace/KISANCHAT/src/test/java/TestData/ExcelData.xlsx");
+		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
