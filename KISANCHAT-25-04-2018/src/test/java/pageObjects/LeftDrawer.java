@@ -10,16 +10,17 @@ public class LeftDrawer extends BaseClass {
 	public LeftDrawer(WebDriver driver) {
 		super(driver);
 	}
-	By leftDrawerBtn = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > nav > mat-toolbar > button > a:nth-child(1) > i");
-	By closeBtn = By.cssSelector("#menuListSideNav > app-navigation-drawer > div > div > div.profile_heading > div > div > div.leftNavButton > div.leftArrow > a > i");
-	By userProfileImage = By.cssSelector("#menuListSideNav > app-navigation-drawer > div > div > div.profile_heading > div > div > div.leftNavButton > div.circle-box.text-center.widthfull > a > img");
-	By myChats = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(1) > div > a > span");
-	By myContacts = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(2) > div > a > span");
-	By startYourChannel = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(4) > div > a > span");
-	By language = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(6) > div > a > span");
-	By logout = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(8) > div > a > span");
-	By logoutYes = By.cssSelector("#cdk-overlay-0 > mat-dialog-container > app-logout-popup > div > mat-dialog-actions > button.btnPopup.btnRed");
-	By logoutNo = By.cssSelector("#cdk-overlay-0 > mat-dialog-container > app-logout-popup > div > mat-dialog-actions > button.btnPopup.btnBlack");
+	By leftDrawerBtn = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/button");
+	By closeBtn = By.xpath("//*[@id=\"menuListSideNav\"]/app-navigation-drawer/div/div/div[1]/div/div/div[1]/div[1]/a");
+	By userProfileImage = By.xpath("//*[@id=\"menuListSideNav\"]/app-navigation-drawer/div/div/div[1]/div/div/div[1]/div[2]/a");
+	By home = By.xpath("//span[contains(text(),'Home')]");
+	By discover = By.xpath("//span[contains(text(),'Discover')]");
+//	By startYourChannel = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(4) > div > a > span");
+//	By language = By.cssSelector("#container > perfect-scrollbar > div > div.ps-content > div > mat-nav-list > mat-list-item:nth-child(6) > div > a > span");
+	By support = By.xpath("//span[contains(text(),'Support')]"); //(By.xpath("//*[contains(text(),'" + predefined string + "')]")) 
+	By logout = By.xpath("//span[contains(text(),'Logout')]");
+	By logoutYes = By.xpath("//button[contains(text(),' Yes')]");
+	By logoutNo = By.xpath("//button[contains(text(),' No')]");
 	
 	public void click_leftDrawerBtn() {
 		waitTillElementPresent(leftDrawerBtn);
@@ -37,25 +38,25 @@ public class LeftDrawer extends BaseClass {
 	}
 	
 	public void click_myChats() {
-		waitTillElementPresent(myChats);
-		driver.findElement(myChats).click();
+		waitTillElementPresent(home);
+		driver.findElement(home).click();
 	}
 	
 	public void click_myContacts() {
-		waitTillElementPresent(myContacts);
-		driver.findElement(myContacts).click();
+		waitTillElementPresent(discover);
+		driver.findElement(discover).click();
 	}
 	
-	public void click_startYourChannel() {
-		waitTillElementPresent(startYourChannel);
-		driver.findElement(startYourChannel).click();
-	}
-	
-	public void click_language() {
-		waitTillElementPresent(language);
-		driver.findElement(language).click();
-	}
-	
+//	public void click_startYourChannel() {
+//		waitTillElementPresent(startYourChannel);
+//		driver.findElement(startYourChannel).click();
+//	}
+//	
+//	public void click_language() {
+//		waitTillElementPresent(language);
+//		driver.findElement(language).click();
+//	}
+//	
 	public void click_logout() {
 		waitTillElementPresent(logout);
 		driver.findElement(logout).click();
