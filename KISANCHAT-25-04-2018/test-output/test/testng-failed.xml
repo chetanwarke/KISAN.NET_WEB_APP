@@ -6,7 +6,6 @@
       <class name="testCases.LOGIN">
         <methods>
           <include name="launchBrowser"/>
-          <include name="defaultContent"/>
           <include name="loginSteps"/>
         </methods>
       </class> <!-- testCases.LOGIN -->
