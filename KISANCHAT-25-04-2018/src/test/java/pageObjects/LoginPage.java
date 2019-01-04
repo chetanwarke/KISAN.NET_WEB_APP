@@ -40,12 +40,12 @@ public class LoginPage extends BaseClass{
 //		Thread.sleep(3000);
 //		driver.findElement(countryCode).click();
 //	}
+	
 	//set user mobile number
 	public void set_enterIFrameMobile() throws Exception {
 		driver.findElement(enterIFrameMobile).click();
 		DataFile input = new DataFile(driver);
 //		input.openExcelFile();
-		
 		String mobNumber = input.readTextInput("Login",1,0);	//readNumberInput(rowID, colID)
 		setText(enterIFrameMobile, mobNumber);
 	}

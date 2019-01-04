@@ -10,7 +10,7 @@ public class LIST_CHANNELS extends BrowserFactory {
 
 	@Test
 	public void channelList() throws Exception {
-		driver.get("http://net.kisanlab.com/#/welcome-dashboard");
+//		driver.get("http://net.kisanlab.com/#/welcome-dashboard");
 		WelcomeDashboardPage wd = new WelcomeDashboardPage(driver);
 		wd.listChannels();
 		

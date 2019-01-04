@@ -13,7 +13,7 @@ public class LOGIN extends BrowserFactory{
 	@BeforeTest
 		public void launchBrowser() {
 		chromeBrowser();
-		driver.get("http://net.kisanlab.com");
+		driver.get("https://net.kisan.in");
 	}
 
 	@Test

@@ -6,32 +6,38 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
 import utility.BaseClass;
+import utility.DataFile;
 
 public class WelcomeDashboardPage extends BaseClass{
 	
-	By leftDrawerBtn = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > nav > mat-toolbar > button");
-	By discoverBtn = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > nav > mat-toolbar > mat-list > mat-icon:nth-child(1) > button");
-	By notification = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > nav > mat-toolbar > mat-list > mat-icon:nth-child(2) > button");
-	By menuBtn = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > nav > mat-toolbar > mat-list > mat-icon:nth-child(3) > button");
-	By startDiscoveringLink = By.cssSelector("#greenColorBody > app-root > app-welcome-dashboard > div > div > mat-sidenav-container > mat-sidenav-content > section > div > div > a");
+	By leftDrawerBtn = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/button");
+	By discoverBtn = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/mat-list/mat-icon[1]");
+	By notification = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/mat-list/mat-icon[2]");
+	By menuBtn = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/mat-list/mat-icon[3]");
+	By startDiscoveringLink = By.xpath("//*[@id=\"lightergrayColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/section/div/div/a");
+	
+	DataFile file = new DataFile(driver);
 	
 	public WelcomeDashboardPage(WebDriver driver) {
 		super(driver);
 	}
 	
-	public void listChannels() {
-		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName']"));
+	public void listChannels() throws Exception {
+		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName ng-star-inserted']"));
 		System.out.println("Total no of channels on mychat : "+chs.size());
 		int i=1;
+		
 		for(WebElement we : chs)
 		{
+			String valueToWrite = we.getText();
+			file.writeTextInput("MyChatList", valueToWrite);
 			System.out.println(i+" : "+we.getText());	
 			i++;
 		}
 	}
 	
 	public void listChannelsDetails() {
-		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName']"));
+		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName ng-star-inserted']"));
 		
 		System.out.println("Total no of channels on mychat : "+chs.size());
 		int i=1;
@@ -40,6 +46,13 @@ public class WelcomeDashboardPage extends BaseClass{
 			System.out.println(i+" : "+we.getText());	
 			i++;
 		}
+	}
+	
+	public void clickOnChannel(String chanlName) throws Exception
+	{
+		file.readTextInput("MyChatList", 0, 0);
+		
+		
 	}
 	
 	public void click_leftDrawerBtn() {
