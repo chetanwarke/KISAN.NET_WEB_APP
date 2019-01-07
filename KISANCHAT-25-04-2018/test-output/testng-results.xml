@@ -2,20 +2,20 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="test" duration-ms="76511" started-at="2019-01-03T12:34:36Z" finished-at="2019-01-03T12:35:53Z">
+  <suite name="test" duration-ms="56971" started-at="2019-01-07T05:43:54Z" finished-at="2019-01-07T05:44:51Z">
     <groups>
     </groups>
-    <test name="Login " duration-ms="76511" started-at="2019-01-03T12:34:36Z" finished-at="2019-01-03T12:35:53Z">
+    <test name="Login " duration-ms="56971" started-at="2019-01-07T05:43:54Z" finished-at="2019-01-07T05:44:51Z">
       <class name="testCases.LOGIN">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="32665" started-at="2019-01-03T18:04:36Z" finished-at="2019-01-03T18:05:09Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.LOGIN@51565ec2]" name="launchBrowser" is-config="true" duration-ms="18767" started-at="2019-01-07T11:13:54Z" finished-at="2019-01-07T11:14:13Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginSteps()[pri:0, instance:testCases.LOGIN@28feb3fa]" name="loginSteps" duration-ms="41808" started-at="2019-01-03T18:05:09Z" finished-at="2019-01-03T18:05:51Z">
+        <test-method status="PASS" signature="loginSteps()[pri:0, instance:testCases.LOGIN@51565ec2]" name="loginSteps" duration-ms="36176" started-at="2019-01-07T11:14:13Z" finished-at="2019-01-07T11:14:49Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginSteps -->
-        <test-method status="PASS" signature="defaultContent()[pri:0, instance:testCases.LOGIN@28feb3fa]" name="defaultContent" is-config="true" duration-ms="2012" started-at="2019-01-03T18:05:51Z" finished-at="2019-01-03T18:05:53Z">
+        <test-method status="PASS" signature="defaultContent()[pri:0, instance:testCases.LOGIN@51565ec2]" name="defaultContent" is-config="true" duration-ms="2012" started-at="2019-01-07T11:14:49Z" finished-at="2019-01-07T11:14:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- defaultContent -->

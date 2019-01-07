@@ -4,14 +4,14 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 
-import org.apache.poi.hssf.usermodel.HSSFCell;
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
+import org.apache.poi.xssf.usermodel.XSSFRow;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
+import org.apache.poi.ss.usermodel.DataFormatter;
+
 
 public class DataFile extends BaseClass{
 	
@@ -25,7 +25,6 @@ public class DataFile extends BaseClass{
 	      FileInputStream fis = new FileInputStream(file);
 	      
 	      //Get the workbook instance for XLSX file 
-//	      HSSFWorkbook workbook = new HSSFWorkbook(fis);
 //	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      
 	      if(file.isFile() && file.exists()) {
@@ -42,47 +41,51 @@ public class DataFile extends BaseClass{
 
 	public String readTextInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xls");
+		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
-	      HSSFWorkbook workbook = new HSSFWorkbook(fis);
-//	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
-	      HSSFSheet spreadsheet = workbook.getSheet(sheetName);
-//	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
-	      HSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);
-//	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
 	      
 	      if(cell == null)
 	        {
 	            System.out.println("finding cell in sheet is null ");
 	        }
-	        else if(cell.getCellType() == CellType.NUMERIC)
+	        else if(cell.getCellType() == XSSFCell.CELL_TYPE_NUMERIC)
 	        {
-	            System.out.println("finding text is number ");
-	        }
-	        DataFormatter dataFormatter = new DataFormatter();
-	        String cellData = dataFormatter.formatCellValue(cell);
-			return cellData;
-	}
+//	            System.out.println("finding text is number ");
+	            DataFormatter dataFormatter = new DataFormatter();
+		        String cellData = dataFormatter.formatCellValue(cell);
+		        return cellData;
+	    	} 
+	        
+//	        DataFormatter dataFormatter = new DataFormatter();
+//	        String cellData = dataFormatter.formatCellValue(cell);
+//			return cellData;
+	      String cellData = cell.getStringCellValue();
+	      return cellData;
+	} 
 	
 	public double readNumberInput(String sheetName, int RowNum, int ColNum)throws Exception {
 		
-		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xls");
+		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
-	      HSSFWorkbook workbook = new HSSFWorkbook(fis);
-//	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
-	      HSSFSheet spreadsheet = workbook.getSheet(sheetName);
-//	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
-	      HSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);
-//	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
+	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
 	      
 	      if(cell == null)
 	        {
 	            System.out.println("finding cell in sheet is null ");
 	        }
-	        else if(cell.getCellType() == CellType.STRING)
+	        else if(cell.getCellType() == XSSFCell.CELL_TYPE_STRING)
 	        {
-	            System.out.println("finding number is text ");
-	        }  
+//	            System.out.println("finding number is text ");
+	        	 DataFormatter dataFormatter = new DataFormatter();
+			     String text = dataFormatter.formatCellValue(cell);
+			     double cellData = Double.parseDouble(text);
+			     return cellData;
+	        }
 	      
 			double cellData = cell.getNumericCellValue();
 			return cellData;
@@ -90,20 +93,17 @@ public class DataFile extends BaseClass{
 	
 	public void writeTextInput(String sheetName, String dataToWrite)throws Exception {
 		
-		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xls");
+		  File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
-	      HSSFWorkbook workbook = new HSSFWorkbook(fis);
-//	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
-	      HSSFSheet spreadsheet = workbook.getSheet(sheetName);
-//	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
-//	      HSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);
+	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
+	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
 //	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
 	     
 	      //Get the current count of rows in excel file
 	      int rowCount = spreadsheet.getLastRowNum()-spreadsheet.getFirstRowNum();
 	     
 	      //Get the first row from the sheet
-	      HSSFRow row = spreadsheet.getRow(0);
+	      XSSFRow row = spreadsheet.getRow(0);
 	      
 	      for(int i=0;i<rowCount;i++)
 	      {
@@ -111,7 +111,7 @@ public class DataFile extends BaseClass{
 	      }
 
 	      //Create a new row and append it at last of sheet
-	      HSSFRow newRow = spreadsheet.createRow(rowCount+1);
+	      XSSFRow newRow = spreadsheet.createRow(rowCount+1);
 
 //	      HSSFCell cell = newRow.createCell(0);
 //	      cell.setCellValue(dataToWrite);
@@ -121,7 +121,7 @@ public class DataFile extends BaseClass{
 	      for(int j = 0; j < row.getLastCellNum(); j++){
 
 	          //Fill data in row
-	    	  HSSFCell cell = newRow.createCell(j);
+	    	  XSSFCell cell = newRow.createCell(j);
 	          cell.setCellValue(dataToWrite);
 
 	      }

@@ -3,11 +3,13 @@
 <suite name="Failed suite [Default suite]">
   <test name="Default test(failed)">
     <classes>
-      <class name="testCases.LIST_CHANNELS">
+      <class name="testCases.LOGIN">
         <methods>
-          <include name="channelList"/>
+          <include name="launchBrowser"/>
+          <include name="defaultContent"/>
+          <include name="loginSteps"/>
         </methods>
-      </class> <!-- testCases.LIST_CHANNELS -->
+      </class> <!-- testCases.LOGIN -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

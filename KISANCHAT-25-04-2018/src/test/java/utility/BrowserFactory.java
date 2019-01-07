@@ -11,8 +11,6 @@ public class BrowserFactory{
 	
 	public void chromeBrowser() {
 		System.setProperty("webdriver.chrome.driver", "E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\browser-drivers\\chromedriver.exe");
-		DesiredCapabilities caps = DesiredCapabilities.chrome();
-		caps.setJavascriptEnabled(true);
 		ChromeOptions options = new ChromeOptions();
 		options.addArguments("test-type");
 		options.addArguments("--disable-popup-blocking");

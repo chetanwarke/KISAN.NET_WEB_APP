@@ -8,7 +8,7 @@ import pageObjects.LoginPage;
 import pageObjects.SelectLanguagePage;
 import utility.BrowserFactory;
 
-public class LOGIN extends BrowserFactory{
+public class VISITOR_LOGIN extends BrowserFactory{
 	
 	@BeforeTest
 		public void launchBrowser() {
@@ -28,6 +28,7 @@ public class LOGIN extends BrowserFactory{
 //			lp.set_countryCode();
 			lp.set_enterIFrameMobile();
 			lp.click_next();
+			lp.click_enterOTPTextBox();
 			lp.click_continueOTP();
 			Thread.sleep(6000);
 			

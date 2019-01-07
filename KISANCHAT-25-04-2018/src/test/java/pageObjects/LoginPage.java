@@ -16,6 +16,7 @@ public class LoginPage extends BaseClass{
 	By enterIFrameMobile = By.xpath("//*[@id=\"u_0_6q\"]");
 	By next = By.xpath("//*[@id=\"u_0_6r\"]"); //button[contains(text(),'Next')]
 	By continueOTP = By.xpath("//*[@id=\"u_0_4\"]"); //button[contains(text(),'Continue')]
+	By enterOTPTextBox = By.xpath("//*[@id=\"u_0_3\"]");
 //	String country = "India";
 	
 	//constructor
@@ -49,10 +50,16 @@ public class LoginPage extends BaseClass{
 		String mobNumber = input.readTextInput("Login",1,0);	//readNumberInput(rowID, colID)
 		setText(enterIFrameMobile, mobNumber);
 	}
+	
 	//Click on Next button after entering mobile number
 	public void click_next() {
 		waitTillElementClickable(next);
 		driver.findElement(next).click();
+	}
+	
+	public void click_enterOTPTextBox() {
+		waitTillElementPresent(enterOTPTextBox);
+		driver.findElement(enterOTPTextBox).click();
 	}
 	//Click on Continue button after entering otp
 	public void click_continueOTP() {
