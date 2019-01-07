@@ -1,24 +1,31 @@
 package utility;
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class BrowserFactory{
 	public static WebDriver driver = null;
 	
 	public void chromeBrowser() {
-		System.setProperty("webdriver.chrome.driver", "E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\browser-drivers\\chromedriver.exe");
+//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("test-type");
-		options.addArguments("--disable-popup-blocking");
+//		options.addArguments("--disable-notifications");
+	
+		Map<String, Object> prefs=new HashMap<String,Object>();
+		prefs.put("profile.default_content_setting_values.notifications", 1);
+		//1-Allow, 2-Block, 0-default
+		options.setExperimentalOption("prefs",prefs);
 		
+		System.setProperty("webdriver.chrome.driver", "E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\browser-drivers\\chromedriver.exe");
 		driver = new ChromeDriver(options);
 		driver.manage().window().maximize();
-		
-//		driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
+
 	}
 	
 	public void firefoxBrowser() {

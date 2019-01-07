@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [test]">
-  <test name="Login (failed)">
+  <test name="List of Channels (failed)">
     <classes>
-      <class name="testCases.LOGIN">
+      <class name="testCases.LIST_CHANNELS">
+        <methods>
+          <include name="channelList"/>
+        </methods>
+      </class> <!-- testCases.LIST_CHANNELS -->
+      <class name="testCases.VISITOR_LOGIN">
         <methods>
           <include name="launchBrowser"/>
           <include name="defaultContent"/>
-          <include name="loginSteps"/>
         </methods>
-      </class> <!-- testCases.LOGIN -->
+      </class> <!-- testCases.VISITOR_LOGIN -->
     </classes>
-  </test> <!-- Login (failed) -->
+  </test> <!-- List of Channels (failed) -->
 </suite> <!-- Failed suite [test] -->

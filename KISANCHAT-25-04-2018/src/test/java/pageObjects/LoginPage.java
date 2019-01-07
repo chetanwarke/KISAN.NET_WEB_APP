@@ -1,8 +1,13 @@
 package pageObjects;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utility.BaseClass;
 import utility.DataFile;
@@ -16,7 +21,7 @@ public class LoginPage extends BaseClass{
 	By enterIFrameMobile = By.xpath("//*[@id=\"u_0_6q\"]");
 	By next = By.xpath("//*[@id=\"u_0_6r\"]"); //button[contains(text(),'Next')]
 	By continueOTP = By.xpath("//*[@id=\"u_0_4\"]"); //button[contains(text(),'Continue')]
-	By enterOTPTextBox = By.xpath("//*[@id=\"u_0_3\"]");
+	By enterOTPTextBox = By.xpath("//input[@name='confirmation_code']");
 //	String country = "India";
 	
 	//constructor
@@ -29,12 +34,22 @@ public class LoginPage extends BaseClass{
 //		driver.findElement(enterMobile).click();
 //		
 //	}
+	
+	
 	//Switch to iframe
 	public void iFrame() throws Exception {
-		Thread.sleep(4000);
+//		WebDriverWait wait = new WebDriverWait(driver, 9);
+//		Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
+//	    Alert alert = driver.switchTo().alert();
+//		alert.accept();
+		waitTillElementPresent(iframe);
+		Thread.sleep(3000);
 		WebElement element = driver.findElement(iframe);
 		driver.switchTo().frame(element);
+
 	}
+	
 	//set country code
 //	public void set_countryCode() throws Exception {
 //		driver.findElement(countryBox).click();
@@ -57,8 +72,10 @@ public class LoginPage extends BaseClass{
 		driver.findElement(next).click();
 	}
 	
-	public void click_enterOTPTextBox() {
-		waitTillElementPresent(enterOTPTextBox);
+	public void click_enterOTPTextBox() throws Exception {
+		
+		waitTillElementClickable(enterOTPTextBox);
+		Thread.sleep(3000);
 		driver.findElement(enterOTPTextBox).click();
 	}
 	//Click on Continue button after entering otp

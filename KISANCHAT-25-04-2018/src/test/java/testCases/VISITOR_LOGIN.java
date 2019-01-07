@@ -5,7 +5,6 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import pageObjects.LoginPage;
-import pageObjects.SelectLanguagePage;
 import utility.BrowserFactory;
 
 public class VISITOR_LOGIN extends BrowserFactory{
@@ -18,8 +17,7 @@ public class VISITOR_LOGIN extends BrowserFactory{
 
 	@Test
 		public void loginSteps() throws Exception {
-//			SelectLanguagePage sl = new SelectLanguagePage(driver);
-//			sl .clickEnglish();
+
 			LoginPage lp = new LoginPage(driver);
 //			lp.click_enterMobile();
 			Thread.sleep(3000);
@@ -30,10 +28,9 @@ public class VISITOR_LOGIN extends BrowserFactory{
 			lp.click_next();
 			lp.click_enterOTPTextBox();
 			lp.click_continueOTP();
-			Thread.sleep(6000);
+			Thread.sleep(10000);
 			
 		}
-	
 	@AfterTest
 	public void defaultContent() throws Exception {
 		driver.switchTo().defaultContent();

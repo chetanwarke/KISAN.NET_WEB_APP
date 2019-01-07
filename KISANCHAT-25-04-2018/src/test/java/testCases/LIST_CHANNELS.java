@@ -1,6 +1,5 @@
 package testCases;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import pageObjects.WelcomeDashboardPage;

@@ -10,7 +10,6 @@ import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.WebDriver;
-import org.apache.poi.ss.usermodel.DataFormatter;
 
 
 public class DataFile extends BaseClass{
@@ -23,10 +22,7 @@ public class DataFile extends BaseClass{
 		try {
 	      File file = new File("E:\\Chetan-Selenium\\git\\KISAN.NET_WEB_APP\\KISANCHAT-25-04-2018\\src\\test\\java\\TestData\\ExcelData.xlsx");
 	      FileInputStream fis = new FileInputStream(file);
-	      
-	      //Get the workbook instance for XLSX file 
-//	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
-	      
+  
 	      if(file.isFile() && file.exists()) {
 	         System.out.println("Data.xlsx file open successfully.");
 	      } else {
@@ -97,45 +93,30 @@ public class DataFile extends BaseClass{
 	      FileInputStream fis = new FileInputStream(file);
 	      XSSFWorkbook workbook = new XSSFWorkbook(fis);
 	      XSSFSheet spreadsheet = workbook.getSheet(sheetName);
-//	      XSSFCell cell = spreadsheet.getRow(RowNum).getCell(ColNum);	
-	     
-	      //Get the current count of rows in excel file
+//	      //Get the current count of rows in excel file
 	      int rowCount = spreadsheet.getLastRowNum()-spreadsheet.getFirstRowNum();
 	     
-	      //Get the first row from the sheet
-	      XSSFRow row = spreadsheet.getRow(0);
-	      
-	      for(int i=0;i<rowCount;i++)
-	      {
-	    	  row.removeCell(row.getCell(0));
-	      }
+//	      //Get the first row from the sheet
+//	      XSSFRow row = spreadsheet.getRow(0);
+//	      
+//	      for(int i=0;i<rowCount;i++)
+//	      {
+//	    	  row.removeCell(row.getCell(i));
+//	      }
 
 	      //Create a new row and append it at last of sheet
 	      XSSFRow newRow = spreadsheet.createRow(rowCount+1);
+	      //Fill data in row
+    	  XSSFCell cell = newRow.createCell(1);
+          cell.setCellValue(dataToWrite);
 
-//	      HSSFCell cell = newRow.createCell(0);
-//	      cell.setCellValue(dataToWrite);
-
-	      
-	      //Create a loop over the cell of newly created Row
-	      for(int j = 0; j < row.getLastCellNum(); j++){
-
-	          //Fill data in row
-	    	  XSSFCell cell = newRow.createCell(j);
-	          cell.setCellValue(dataToWrite);
-
-	      }
-
-	      //Close input stream
 	      fis.close();
 
 	      //Create an object of FileOutputStream class to create write data in excel file
 	      FileOutputStream outputStream = new FileOutputStream(file);
 
-	      //write data in the excel file
 	      workbook.write(outputStream);
 
-	      //close output stream
 	      outputStream.close();
 
 	}

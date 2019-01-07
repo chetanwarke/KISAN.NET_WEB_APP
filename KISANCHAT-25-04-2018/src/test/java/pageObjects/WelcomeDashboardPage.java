@@ -23,16 +23,19 @@ public class WelcomeDashboardPage extends BaseClass{
 	}
 	
 	public void listChannels() throws Exception {
+		Thread.sleep(6000);
+		waitTillElementPresent(discoverBtn);
 		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName ng-star-inserted']"));
 		System.out.println("Total no of channels on mychat : "+chs.size());
-		int i=1;
+		
 		
 		for(WebElement we : chs)
 		{
 			String valueToWrite = we.getText();
 			file.writeTextInput("MyChatList", valueToWrite);
-			System.out.println(i+" : "+we.getText());	
-			i++;
+//			int i=1;
+//			System.out.println(i+" : "+we.getText());	
+//			i++;
 		}
 	}
 	
