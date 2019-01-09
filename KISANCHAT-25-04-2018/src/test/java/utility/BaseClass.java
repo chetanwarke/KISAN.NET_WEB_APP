@@ -10,7 +10,7 @@ public class BaseClass extends BrowserFactory{
 	//public WebDriver driver;
 	//constructor
 	public BaseClass(WebDriver driver) {
-		this.driver = driver;
+		BrowserFactory.driver = driver;
 	}
 	// wait for element to appears
 	public WebDriverWait waitTillElementPresent(By locator) {

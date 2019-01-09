@@ -1,33 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="test" duration-ms="66135" started-at="2019-01-07T11:19:43Z" finished-at="2019-01-07T11:20:49Z">
+  <suite name="Default suite" duration-ms="14112" started-at="2019-01-09T11:24:52Z" finished-at="2019-01-09T11:25:06Z">
     <groups>
     </groups>
-    <test name="Login " duration-ms="59107" started-at="2019-01-07T11:19:43Z" finished-at="2019-01-07T11:20:42Z">
-      <class name="testCases.VISITOR_LOGIN">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.VISITOR_LOGIN@51565ec2]" name="launchBrowser" is-config="true" duration-ms="23015" started-at="2019-01-07T16:49:43Z" finished-at="2019-01-07T16:50:06Z">
+    <test name="Default test" duration-ms="14112" started-at="2019-01-09T11:24:52Z" finished-at="2019-01-09T11:25:06Z">
+      <class name="testCases.EXHIBITOR_LOGIN">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="6936" started-at="2019-01-09T16:54:52Z" finished-at="2019-01-09T16:54:59Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginSteps()[pri:0, instance:testCases.VISITOR_LOGIN@51565ec2]" name="loginSteps" duration-ms="34038" started-at="2019-01-07T16:50:06Z" finished-at="2019-01-07T16:50:40Z">
+        <test-method status="PASS" signature="loginAsExhibitor()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="loginAsExhibitor" duration-ms="7160" started-at="2019-01-09T16:54:59Z" finished-at="2019-01-09T16:55:06Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginSteps -->
-        <test-method status="PASS" signature="defaultContent()[pri:0, instance:testCases.VISITOR_LOGIN@51565ec2]" name="defaultContent" is-config="true" duration-ms="2011" started-at="2019-01-07T16:50:40Z" finished-at="2019-01-07T16:50:42Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- defaultContent -->
-      </class> <!-- testCases.VISITOR_LOGIN -->
-    </test> <!-- Login  -->
-    <test name="List of Channels " duration-ms="6867" started-at="2019-01-07T11:20:42Z" finished-at="2019-01-07T11:20:49Z">
-      <class name="testCases.LIST_CHANNELS">
-        <test-method status="PASS" signature="channelList()[pri:0, instance:testCases.LIST_CHANNELS@42d80b78]" name="channelList" duration-ms="6865" started-at="2019-01-07T16:50:42Z" finished-at="2019-01-07T16:50:49Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- channelList -->
-      </class> <!-- testCases.LIST_CHANNELS -->
-    </test> <!-- List of Channels  -->
-  </suite> <!-- test -->
+        </test-method> <!-- loginAsExhibitor -->
+      </class> <!-- testCases.EXHIBITOR_LOGIN -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
