@@ -1,21 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="2" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="14112" started-at="2019-01-09T11:24:52Z" finished-at="2019-01-09T11:25:06Z">
+  <suite name="test" duration-ms="25644" started-at="2019-01-24T05:35:58Z" finished-at="2019-01-24T05:36:24Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="14112" started-at="2019-01-09T11:24:52Z" finished-at="2019-01-09T11:25:06Z">
+    <test name="Login " duration-ms="18487" started-at="2019-01-24T05:35:58Z" finished-at="2019-01-24T05:36:17Z">
       <class name="testCases.EXHIBITOR_LOGIN">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="6936" started-at="2019-01-09T16:54:52Z" finished-at="2019-01-09T16:54:59Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="11248" started-at="2019-01-24T11:05:58Z" finished-at="2019-01-24T11:06:09Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginAsExhibitor()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="loginAsExhibitor" duration-ms="7160" started-at="2019-01-09T16:54:59Z" finished-at="2019-01-09T16:55:06Z">
+        <test-method status="PASS" signature="loginAsExhibitor()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="loginAsExhibitor" duration-ms="7210" started-at="2019-01-24T11:06:09Z" finished-at="2019-01-24T11:06:17Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAsExhibitor -->
       </class> <!-- testCases.EXHIBITOR_LOGIN -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+    </test> <!-- Login  -->
+    <test name="List of Channels " duration-ms="7105" started-at="2019-01-24T05:36:17Z" finished-at="2019-01-24T05:36:24Z">
+      <class name="testCases.LIST_CHANNELS">
+        <test-method status="PASS" signature="channelList()[pri:0, instance:testCases.LIST_CHANNELS@1e88b3c]" name="channelList" duration-ms="7103" started-at="2019-01-24T11:06:17Z" finished-at="2019-01-24T11:06:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- channelList -->
+      </class> <!-- testCases.LIST_CHANNELS -->
+    </test> <!-- List of Channels  -->
+  </suite> <!-- test -->
 </testng-results>
