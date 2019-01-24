@@ -1,4 +1,4 @@
-package testCases.LOGIN .NET;
+package testCases;
 
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
@@ -25,3 +25,4 @@ public class EXHIBITOR_LOGIN extends BrowserFactory{
 		Thread.sleep(5000);
 	}
 }
+

@@ -3,7 +3,7 @@
 <suite name =  "test">
 	<test name = "Login ">
 		<classes>
-			<class name="testCases.VISITOR_LOGIN"></class>
+			<class name="testCases.EXHIBITOR_LOGIN"></class>
 		</classes>
 	</test>
 	<test name = "List of Channels ">

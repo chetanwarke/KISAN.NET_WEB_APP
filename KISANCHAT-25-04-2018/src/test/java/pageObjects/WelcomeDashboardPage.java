@@ -23,8 +23,9 @@ public class WelcomeDashboardPage extends BaseClass{
 	}
 	
 	public void listChannels() throws Exception {
-		Thread.sleep(6000);
+//		Thread.sleep(6000);
 		waitTillElementPresent(discoverBtn);
+		Thread.sleep(6000);
 		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName ng-star-inserted']"));
 		System.out.println("Total no of channels on mychat : "+chs.size());
 		
