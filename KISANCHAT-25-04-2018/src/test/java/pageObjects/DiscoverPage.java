@@ -5,9 +5,9 @@ import org.openqa.selenium.WebDriver;
 import utility.BaseClass;
 import utility.DataFile;
 
-public class DiscoverPge extends BaseClass{
+public class DiscoverPage extends BaseClass{
 
-	public DiscoverPge(WebDriver driver) {
+	public DiscoverPage(WebDriver driver) {
 		super(driver);
 	}
 	

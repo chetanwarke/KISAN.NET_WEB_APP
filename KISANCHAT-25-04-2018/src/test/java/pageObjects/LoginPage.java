@@ -105,6 +105,9 @@ public class LoginPage extends BaseClass{
 	public void set_exhUsername() throws Exception {
 		waitTillElementPresent(exhUsername);
 		driver.findElement(exhUsername).click();	
+//		for test site
+//		String uname = input.readTextInput("Login", 2, 4);
+//		for live site
 		String uname = input.readTextInput("Login", 1, 4);
 		setText(exhUsername, uname);
 		
@@ -113,6 +116,9 @@ public class LoginPage extends BaseClass{
 	public void set_exhPassword() throws Exception {
 		waitTillElementPresent(exhPassword);
 		driver.findElement(exhPassword).click();
+//		for test site
+//		String pass = input.readTextInput("Login", 2, 5);
+//		for live site
 		String pass = input.readTextInput("Login", 1, 5);
 		setText(exhPassword, pass);
 	}

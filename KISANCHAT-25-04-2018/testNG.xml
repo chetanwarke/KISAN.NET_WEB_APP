@@ -10,6 +10,10 @@
 		<classes>
 			<class name="testCases.LIST_CHANNELS"></class>
 		</classes>
-	
+	</test>
+	<test name="Channel search from Discover">
+		<classes>
+			<class name="testCases.SEARCH_CHNL_DISCOVER"></class>
+		</classes>
 	</test>
 	</suite>
