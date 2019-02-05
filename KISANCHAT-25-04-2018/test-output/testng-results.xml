@@ -1,29 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="2" passed="2">
+<testng-results skipped="0" failed="1" total="3" passed="2">
   <reporter-output>
   </reporter-output>
-  <suite name="test" duration-ms="25644" started-at="2019-01-24T05:35:58Z" finished-at="2019-01-24T05:36:24Z">
+  <suite name="test" duration-ms="116771" started-at="2019-02-05T10:34:35Z" finished-at="2019-02-05T10:36:32Z">
     <groups>
     </groups>
-    <test name="Login " duration-ms="18487" started-at="2019-01-24T05:35:58Z" finished-at="2019-01-24T05:36:17Z">
+    <test name="Login " duration-ms="30128" started-at="2019-02-05T10:34:35Z" finished-at="2019-02-05T10:35:05Z">
       <class name="testCases.EXHIBITOR_LOGIN">
-        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="11248" started-at="2019-01-24T11:05:58Z" finished-at="2019-01-24T11:06:09Z">
+        <test-method status="PASS" signature="launchBrowser()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="launchBrowser" is-config="true" duration-ms="17264" started-at="2019-02-05T16:04:35Z" finished-at="2019-02-05T16:04:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method status="PASS" signature="loginAsExhibitor()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="loginAsExhibitor" duration-ms="7210" started-at="2019-01-24T11:06:09Z" finished-at="2019-01-24T11:06:17Z">
+        <test-method status="PASS" signature="loginAsExhibitor()[pri:0, instance:testCases.EXHIBITOR_LOGIN@28feb3fa]" name="loginAsExhibitor" duration-ms="12844" started-at="2019-02-05T16:04:52Z" finished-at="2019-02-05T16:05:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginAsExhibitor -->
       </class> <!-- testCases.EXHIBITOR_LOGIN -->
     </test> <!-- Login  -->
-    <test name="List of Channels " duration-ms="7105" started-at="2019-01-24T05:36:17Z" finished-at="2019-01-24T05:36:24Z">
+    <test name="List of Channels " duration-ms="15337" started-at="2019-02-05T10:35:05Z" finished-at="2019-02-05T10:35:21Z">
       <class name="testCases.LIST_CHANNELS">
-        <test-method status="PASS" signature="channelList()[pri:0, instance:testCases.LIST_CHANNELS@1e88b3c]" name="channelList" duration-ms="7103" started-at="2019-01-24T11:06:17Z" finished-at="2019-01-24T11:06:24Z">
+        <test-method status="PASS" signature="channelList()[pri:0, instance:testCases.LIST_CHANNELS@1e88b3c]" name="channelList" duration-ms="15334" started-at="2019-02-05T16:05:05Z" finished-at="2019-02-05T16:05:21Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- channelList -->
       </class> <!-- testCases.LIST_CHANNELS -->
     </test> <!-- List of Channels  -->
+    <test name="Channel search from Discover" duration-ms="71236" started-at="2019-02-05T10:35:21Z" finished-at="2019-02-05T10:36:32Z">
+      <class name="testCases.SEARCH_CHNL_DISCOVER">
+        <test-method status="FAIL" signature="searchChnl()[pri:0, instance:testCases.SEARCH_CHNL_DISCOVER@6a4f787b]" name="searchChnl" duration-ms="71227" started-at="2019-02-05T16:05:21Z" finished-at="2019-02-05T16:06:32Z">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="lightgrayColorBody"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[2]/div/div[3]/div[1]/div/input (tried for 60 second(s) with 500 MILLISECONDS interval)]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for presence of element located by: By.xpath: //*[@id="lightgrayColorBody"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[2]/div/div[3]/div[1]/div/input (tried for 60 second(s) with 500 MILLISECONDS interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:80)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:232)
+	at utility.BaseClass.waitTillElementPresent(BaseClass.java:20)
+	at pageObjects.DiscoverPage.searchChnl(DiscoverPage.java:40)
+	at testCases.SEARCH_CHNL_DISCOVER.searchChnl(SEARCH_CHNL_DISCOVER.java:17)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:84)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:714)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:901)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1231)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:127)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:111)
+	at org.testng.TestRunner.privateRun(TestRunner.java:767)
+	at org.testng.TestRunner.run(TestRunner.java:617)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:348)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:343)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:305)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:254)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1224)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1149)
+	at org.testng.TestNG.run(TestNG.java:1057)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+Caused by: org.openqa.selenium.NoSuchElementException: Cannot locate an element using By.xpath: //*[@id="lightgrayColorBody"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[2]/div/div[3]/div[1]/div/input
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.11.0', revision: 'e59cfb3', time: '2018-03-11T20:26:55.152Z'
+System info: host: 'CHETAN-PC', ip: '192.168.0.57', os.name: 'Windows 7', os.arch: 'amd64', os.version: '6.1', java.version: '1.8.0_191'
+Driver info: driver.version: unknown
+	at org.openqa.selenium.support.ui.ExpectedConditions.lambda$findElement$0(ExpectedConditions.java:899)
+	at java.util.Optional.orElseThrow(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.findElement(ExpectedConditions.java:898)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:44)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:184)
+	at org.openqa.selenium.support.ui.ExpectedConditions$6.apply(ExpectedConditions.java:181)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:209)
+	... 27 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchChnl -->
+      </class> <!-- testCases.SEARCH_CHNL_DISCOVER -->
+    </test> <!-- Channel search from Discover -->
   </suite> <!-- test -->
 </testng-results>

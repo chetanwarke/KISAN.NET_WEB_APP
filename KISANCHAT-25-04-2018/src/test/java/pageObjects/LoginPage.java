@@ -91,9 +91,11 @@ public class LoginPage extends BaseClass{
 		driver.findElement(enterOTPTextBox).click();
 	}
 	//Click on Continue button after entering otp
-	public void click_continueOTP() {
+	public void click_continueOTP() throws Exception {
 		waitTillElementClickable(continueOTP);
 		driver.findElement(continueOTP).click();
+		waitForLoader();
+		Thread.sleep(4000);
 	}
 	
 	public void click_exhLogin() {
@@ -123,8 +125,10 @@ public class LoginPage extends BaseClass{
 		setText(exhPassword, pass);
 	}
 	
-	public void click_exhSubmit() {
+	public void click_exhSubmit() throws Exception {
 		waitTillElementClickable(exhSubmit);
 		driver.findElement(exhSubmit).click();
+		waitForLoader();
+		Thread.sleep(5000);
 	}
 }

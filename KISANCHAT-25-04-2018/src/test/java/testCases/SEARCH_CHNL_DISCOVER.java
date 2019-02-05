@@ -13,6 +13,7 @@ public class SEARCH_CHNL_DISCOVER extends BrowserFactory{
 		DiscoverPage dp = new DiscoverPage(driver);
 		WelcomeDashboardPage wd = new WelcomeDashboardPage(driver);
 		wd.click_discoverBtn();
+		dp.click_gotItBtn();
 		dp.searchChnl();
 		
 		

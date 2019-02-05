@@ -11,6 +11,7 @@ public class DiscoverPage extends BaseClass{
 		super(driver);
 	}
 	
+	By gotItBtn = By.xpath("//button/span[contains(text(),'Got It')]");
 	By filterBtn = By.xpath("//*[@id=\"lightgrayColorBody\"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[2]/div/div[3]/div[2]/div");
 	By searchBtn = By.xpath("//*[@id=\"lightgrayColorBody\"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[2]/div/div[3]/div[1]/div/input");
 	By closeBtn = By.xpath("//*[@id=\"lightgrayColorBody\"]/app-root/app-discover-channels/mat-sidenav-container/mat-sidenav-content/div/div/mat-list/mat-list-item[1]/div/a");
@@ -19,14 +20,24 @@ public class DiscoverPage extends BaseClass{
 	
 	DataFile input = new DataFile(driver);
 	
+	public void click_gotItBtn() throws Exception {
+		Thread.sleep(3000);
+		waitForLoader();
+		waitTillElementClickable(gotItBtn);
+//		waitForLoader();
+		driver.findElement(gotItBtn).click();
+	}
+	
 	public void click_filterBtn() {
 		waitTillElementClickable(filterBtn);
 		driver.findElement(filterBtn).click();
 	}
 	
 	public void searchChnl() throws Exception {
+		waitForLoader();
+		Thread.sleep(7000);
 		//clicking on search button
-		waitTillElementClickable(searchBtn);
+		waitTillElementPresent(searchBtn);
 		driver.findElement(searchBtn).click();
 		//type in search input 
 		waitTillElementPresent(searchEdit);

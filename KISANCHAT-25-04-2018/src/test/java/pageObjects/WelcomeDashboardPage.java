@@ -16,6 +16,9 @@ public class WelcomeDashboardPage extends BaseClass{
 	By menuBtn = By.xpath("//*[@id=\"greenColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/nav/mat-toolbar/mat-list/mat-icon[3]");
 	By startDiscoveringLink = By.xpath("//*[@id=\"lightergrayColorBody\"]/app-root/app-welcome-dashboard/div/div/mat-sidenav-container/mat-sidenav-content/section/div/div/a");
 	
+	//for mychat list element to load all channels list
+	By chnList = By.xpath("//*[@id=\"small-part-loader\"]");
+	
 	DataFile file = new DataFile(driver);
 	
 	public WelcomeDashboardPage(WebDriver driver) {
@@ -23,9 +26,12 @@ public class WelcomeDashboardPage extends BaseClass{
 	}
 	
 	public void listChannels() throws Exception {
-//		Thread.sleep(6000);
-		waitTillElementPresent(discoverBtn);
 		Thread.sleep(6000);
+		waitForLoader();
+//		waitTillElementPresent((By) driver.findElement(chnList));
+//		Thread.sleep(8000);
+//		waitTillElementClickable(discoverBtn);
+		Thread.sleep(5000);
 		List <WebElement> chs = driver.findElements(By.cssSelector("span[class='limitChannelName ng-star-inserted']"));
 		System.out.println("Total no of channels on mychat : "+chs.size());
 		
@@ -56,32 +62,32 @@ public class WelcomeDashboardPage extends BaseClass{
 	{
 		file.readTextInput("MyChatList", 0, 0);
 		
-		
 	}
 	
 	public void click_leftDrawerBtn() {
-		waitTillElementPresent(leftDrawerBtn);
+		waitTillElementClickable(leftDrawerBtn);
 		driver.findElement(leftDrawerBtn).click();
 	}
 	
-	public void click_discoverBtn() {
-		waitTillElementPresent(discoverBtn);
+	public void click_discoverBtn() throws Exception {
+//		waitForLoader();
+		waitTillElementClickable(discoverBtn);
 		driver.findElement(discoverBtn).click();
 	}
 	
 	public void click_notification() {
-		waitTillElementPresent(notification);
+		waitTillElementClickable(notification);
 		driver.findElement(notification).click();
 	}
 	
 	public void click_menuBtn() {
-		waitTillElementPresent(menuBtn);
+		waitTillElementClickable(menuBtn);
 		driver.findElement(menuBtn).click();
 	}
 	
 	public void click_startDiscoveringLink() throws Exception {
 		Thread.sleep(4000);
-		waitTillElementPresent(startDiscoveringLink);
+		waitTillElementClickable(startDiscoveringLink);
 		driver.findElement(startDiscoveringLink).click();
 	}
 

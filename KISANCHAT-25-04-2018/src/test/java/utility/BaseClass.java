@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BaseClass extends BrowserFactory{
+	
 	//public WebDriver driver;
 	//constructor
 	public BaseClass(WebDriver driver) {
@@ -41,5 +42,22 @@ public class BaseClass extends BrowserFactory{
 		driver.findElement(locator);
 		Actions action = new Actions(driver);
 		action.sendKeys(String.valueOf(number)).perform();
+	}
+	
+	By loader = By.className("loadingoverlay");
+	
+	public void waitForLoader()throws Exception {
+		try
+		{
+		 if(driver.findElement(loader).isDisplayed())
+		 {
+			WebDriverWait wait = new WebDriverWait(driver, 25);
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(loader));
+		 }
+		}
+		 catch(Exception e)
+		 {
+			 return;
+		 }
 	}
 }

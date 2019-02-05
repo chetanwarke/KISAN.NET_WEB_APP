@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Failed suite [Default suite]">
-  <test name="Default test(failed)">
+<suite name="Failed suite [test]">
+  <test name="Channel search from Discover(failed)">
     <classes>
       <class name="testCases.EXHIBITOR_LOGIN">
         <methods>
           <include name="launchBrowser"/>
-          <include name="loginAsExhibitor"/>
         </methods>
       </class> <!-- testCases.EXHIBITOR_LOGIN -->
+      <class name="testCases.SEARCH_CHNL_DISCOVER">
+        <methods>
+          <include name="searchChnl"/>
+        </methods>
+      </class> <!-- testCases.SEARCH_CHNL_DISCOVER -->
     </classes>
-  </test> <!-- Default test(failed) -->
-</suite> <!-- Failed suite [Default suite] -->
+  </test> <!-- Channel search from Discover(failed) -->
+</suite> <!-- Failed suite [test] -->
