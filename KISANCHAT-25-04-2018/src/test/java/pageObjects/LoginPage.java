@@ -110,7 +110,7 @@ public class LoginPage extends BaseClass{
 //		for test site
 //		String uname = input.readTextInput("Login", 2, 4);
 //		for live site
-		String uname = input.readTextInput("Login", 1, 4);
+		String uname = input.readTextInput("Login", 3, 4);
 		setText(exhUsername, uname);
 		
 	}
@@ -121,14 +121,13 @@ public class LoginPage extends BaseClass{
 //		for test site
 //		String pass = input.readTextInput("Login", 2, 5);
 //		for live site
-		String pass = input.readTextInput("Login", 1, 5);
+		String pass = input.readTextInput("Login", 3, 5);
 		setText(exhPassword, pass);
 	}
 	
 	public void click_exhSubmit() throws Exception {
 		waitTillElementClickable(exhSubmit);
 		driver.findElement(exhSubmit).click();
-		waitForLoader();
-		Thread.sleep(5000);
+//		Thread.sleep(6000);
 	}
 }

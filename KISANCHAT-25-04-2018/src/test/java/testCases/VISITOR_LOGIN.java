@@ -12,7 +12,8 @@ public class VISITOR_LOGIN extends BrowserFactory{
 	@BeforeTest
 		public void launchBrowser() {
 		chromeBrowser();
-		driver.get("https://net.kisan.in");
+//		driver.get("https://net.kisan.in");
+		driver.get("http://net.kisanlab.com");
 	}
 
 	@Test
@@ -34,7 +35,7 @@ public class VISITOR_LOGIN extends BrowserFactory{
 	@AfterTest
 	public void defaultContent() throws Exception {
 		driver.switchTo().defaultContent();
-		Thread.sleep(2000);
+		Thread.sleep(15000);
 	}
 }
 

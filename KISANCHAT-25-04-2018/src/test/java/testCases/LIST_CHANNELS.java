@@ -11,6 +11,7 @@ public class LIST_CHANNELS extends BrowserFactory {
 	public void channelList() throws Exception {
 //		driver.get("http://net.kisanlab.com/#/welcome-dashboard");
 		WelcomeDashboardPage wd = new WelcomeDashboardPage(driver);
+		
 		wd.listChannels();
 		
 //		wd.click_startDiscoveringLink();
